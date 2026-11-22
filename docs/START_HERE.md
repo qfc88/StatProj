@@ -41,7 +41,7 @@ a data file is missing, tell the team before going further.
 Open this folder in your AI tool (Claude Code, Codex, Cursor, GitHub Copilot Chat, …).
 These tools read `AGENTS.md` automatically. Start with a message like:
 
-> Tôi là **Galvin** (hoặc Jovie / Anthony). Hãy đọc hướng dẫn của dự án, cho tôi biết dự án
+> Tôi là **Jovie** (hoặc Galvin / Anthony). Hãy đọc hướng dẫn của dự án, cho tôi biết dự án
 > đang ở đâu, phần việc của tôi là gì và bước tiếp theo nên làm.
 
 The assistant first reads the project rules and runs `python -m src.status --name <you>`
@@ -60,8 +60,8 @@ this file, your file in `docs/team/` and `CONTRACT.md`, then paste the message a
 
 | Name | Part | Your guide |
 |---|---|---|
-| Galvin | Turn the raw data into clean tables | `docs/team/galvin.md` |
-| Jovie | Build the prediction methods | `docs/team/jovie.md` |
+| Jovie | Turn the raw data into clean tables | `docs/team/jovie.md` |
+| Galvin | Build the prediction methods | `docs/team/galvin.md` |
 | Anthony | Split for fair testing, score the methods, final check | `docs/team/anthony.md` |
 
 You can start today: everyone can work on **fake data** first (`python -m src.make_fixture`)

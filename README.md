@@ -56,9 +56,9 @@ Run every command from the repository root with the environment activated.
 |---|---|---|---|
 | – | anyone | `python -m src.status --name <you>` | what exists, what is pending, your next step |
 | 0 | anyone | `python -m src.make_fixture` | fake tables in `outputs/fixture/` for testing |
-| 1 | Galvin | `python -m src.prepare_data` | `outputs/modelling/train.csv`, `test.csv` |
+| 1 | Jovie | `python -m src.prepare_data` | `outputs/modelling/train.csv`, `test.csv` |
 | 2 | Anthony | `python -m src.validation` | `outputs/validation/folds.csv` |
-| 3 | Jovie | `python -m src.models` | `outputs/predictions/predictions.csv` |
+| 3 | Galvin | `python -m src.models` | `outputs/predictions/predictions.csv` |
 | 4 | Anthony | `python -m src.evaluate` | `outputs/evaluation/metrics.csv` |
 
 Steps 2–4 accept `--fixture` to run on the fake data before the real tables exist.
@@ -68,8 +68,8 @@ Numbers from the fixture never go into the report.
 
 - Each person works on their own branch (`feature/<name>-<task>`) and edits only the files
   they own. Changes to the contract go through a separate pull request.
-- Pull requests are reviewed by a teammate: Galvin reviews Anthony, Anthony reviews Jovie,
-  Jovie reviews Galvin.
+- Pull requests are reviewed by a teammate: Jovie reviews Anthony, Anthony reviews Galvin,
+  Galvin reviews Jovie.
 - The Test table is scored once, after the chosen model is written down.
 - Record AI use in `AI_USE.md` (tool, date, purpose, representative prompts, what was
   generated and how it was checked), each person in their own section.

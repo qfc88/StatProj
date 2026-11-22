@@ -44,7 +44,7 @@ Never edit on `main`. One branch per task, named `feature/<name>-<task>`:
 ```bash
 git checkout main
 git pull
-git checkout -b feature/jovie-baseline
+git checkout -b feature/galvin-baseline
 ```
 
 ## 4. Save your work (commit), often
@@ -62,7 +62,7 @@ changes, passwords or personal files; `git status` must not list them for adding
 ## 5. Share your work (push)
 
 ```bash
-git push -u origin feature/jovie-baseline   # first time on this branch
+git push -u origin feature/galvin-baseline   # first time on this branch
 git push                                     # later times
 ```
 
@@ -85,7 +85,7 @@ comments or approves. After approval, the author clicks **Merge**, then everyone
 ```bash
 git checkout main
 git pull
-git branch -d feature/jovie-baseline    # delete the finished branch locally
+git branch -d feature/galvin-baseline    # delete the finished branch locally
 ```
 
 Tell the team in the group chat what is now available (see `docs/INTEGRATION.md`).

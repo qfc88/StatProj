@@ -1,7 +1,7 @@
 """Project status: what exists, what is pending, and the next step for each member.
 
     python -m src.status                 # whole team
-    python -m src.status --name Jovie    # one member
+    python -m src.status --name Galvin    # one member
 
 AI assistants run this at the start of every session (AGENTS.md, section 1) so that
 advice is based on the real state of the repository, not on guesses.
@@ -16,9 +16,9 @@ from src import contract
 from src.paths import DATA_DIR, PROJECT_ROOT, output_paths
 
 PARTS = {
-    "prepare_data": ("galvin", "src/prepare_data.py", "build_modelling_tables"),
+    "prepare_data": ("jovie", "src/prepare_data.py", "build_modelling_tables"),
     "make_folds": ("anthony", "src/validation.py", "make_folds"),
-    "models": ("jovie", "src/models.py", "predict_out_of_fold"),
+    "models": ("galvin", "src/models.py", "predict_out_of_fold"),
     "score": ("anthony", "src/evaluate.py", "score"),
 }
 DATA_FILES = ["hhv2pub.csv", "perv2pub.csv", "tripv2pub.csv", "vehv2pub.csv", "ldtv2pub.csv",
@@ -101,26 +101,26 @@ def output_state(fixture: bool) -> dict:
 def pending_items(done: dict, real: dict) -> dict:
     """Next step per member, based on code and real outputs."""
     expected = {"train_trips": 3516, "test_trips": 877, "modelling_rows": 3484}
-    steps = {"galvin": [], "anthony": [], "jovie": []}
+    steps = {"jovie": [], "anthony": [], "galvin": []}
     has_train = "train_trips" in real
     counts_ok = has_train and all(real.get(k) == v for k, v in expected.items()) and real.get("fingerprint_ok")
 
     if not done["prepare_data"]:
-        steps["galvin"].append("Write build_modelling_tables() in src/prepare_data.py (docs/team/galvin.md).")
+        steps["jovie"].append("Write build_modelling_tables() in src/prepare_data.py (docs/team/jovie.md).")
     elif not has_train:
-        steps["galvin"].append("Run: python -m src.prepare_data")
+        steps["jovie"].append("Run: python -m src.prepare_data")
     elif not counts_ok:
-        steps["galvin"].append(
+        steps["jovie"].append(
             f"STOP: counts or fingerprint differ from CONTRACT.md (train {real.get('train_trips')}, "
             f"test {real.get('test_trips')}, modelling {real.get('modelling_rows')}, "
             f"fingerprint ok: {real.get('fingerprint_ok')}). Report to the team; do not change rules to match.")
     else:
-        steps["galvin"].append("Done for real data. Open/finish the pull request and review Jovie's work.")
+        steps["jovie"].append("Done for real data. Open/finish the pull request and review Galvin's work.")
 
     if not done["make_folds"]:
         steps["anthony"].append("Write make_folds() in src/validation.py; test with --fixture.")
     elif not has_train:
-        steps["anthony"].append("Waiting for real train.csv (Galvin). Meanwhile test with: python -m src.validation --fixture")
+        steps["anthony"].append("Waiting for real train.csv (Jovie). Meanwhile test with: python -m src.validation --fixture")
     elif not real.get("folds_ok"):
         steps["anthony"].append("Run: python -m src.validation   (real folds)")
     if not done["score"]:
@@ -129,15 +129,15 @@ def pending_items(done: dict, real: dict) -> dict:
         steps["anthony"].append("Run: python -m src.evaluate   (score real predictions)")
 
     if not done["models"]:
-        steps["jovie"].append("Write predict_out_of_fold() in src/models.py, starting with baseline_median; test with --fixture.")
+        steps["galvin"].append("Write predict_out_of_fold() in src/models.py, starting with baseline_median; test with --fixture.")
     elif not real.get("folds_ok"):
-        steps["jovie"].append("Waiting for real folds.csv (Anthony). Meanwhile test with: python -m src.models --fixture")
+        steps["galvin"].append("Waiting for real folds.csv (Anthony). Meanwhile test with: python -m src.models --fixture")
     elif not real.get("models"):
-        steps["jovie"].append("Run: python -m src.models   (real out-of-fold predictions)")
+        steps["galvin"].append("Run: python -m src.models   (real out-of-fold predictions)")
     else:
         missing = {"baseline_median", "median_regression"} - set(real["models"])
         if missing:
-            steps["jovie"].append(f"Required models not in predictions yet: {sorted(missing)}")
+            steps["galvin"].append(f"Required models not in predictions yet: {sorted(missing)}")
     return steps
 
 
@@ -188,5 +188,5 @@ def main(name=None) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--name", help="team nickname, e.g. Galvin, Jovie, Anthony")
+    parser.add_argument("--name", help="team nickname, e.g. Jovie, Galvin, Anthony")
     main(parser.parse_args().name)
