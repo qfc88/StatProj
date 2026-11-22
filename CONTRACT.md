@@ -10,9 +10,9 @@ handing a file to someone else.
 
 | Part | Owner | Files only the owner edits | Reads | Writes |
 |---|---|---|---|---|
-| Data preparation | Galvin | `src/prepare_data.py` | `Data/` (raw NHTS files) | `outputs/modelling/train.csv`, `outputs/modelling/test.csv` |
+| Data preparation | Jovie | `src/prepare_data.py` | `Data/` (raw NHTS files) | `outputs/modelling/train.csv`, `outputs/modelling/test.csv` |
 | Validation and scoring | Anthony | `src/validation.py`, `src/evaluate.py` | modelling tables, predictions | `outputs/validation/folds.csv`, `outputs/evaluation/*.csv` |
-| Models | Jovie | `src/models.py` | modelling Train table, folds | `outputs/predictions/predictions.csv` |
+| Models | Galvin | `src/models.py` | modelling Train table, folds | `outputs/predictions/predictions.csv` |
 | Shared contract | Whole team | `CONTRACT.md`, `src/contract.py`, `src/paths.py`, `src/make_fixture.py` | | |
 
 `outputs/` is not committed to Git. Every file in it is rebuilt by the scripts.

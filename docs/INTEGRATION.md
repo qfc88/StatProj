@@ -14,9 +14,9 @@ their script to get their output.
 
 | # | When | Who acts | What they run | Who is unblocked | Message to the team |
 |---|---|---|---|---|---|
-| H1 | Galvin's PR merged | Anthony, Jovie | `git pull` → `python -m src.prepare_data` | Anthony (real folds) | "prepare_data merged: Train 3,516 / Test 877 / 3,484 modelling rows, fingerprint OK" |
-| H2 | Anthony's folds PR merged | Jovie | `git pull` → `python -m src.prepare_data` → `python -m src.validation` | Jovie (real predictions) | "validation merged: 5 folds, 0 shared households" |
-| H3 | Jovie's models PR merged | Anthony | `git pull` → steps above → `python -m src.models` | Anthony (scoring) | "models merged: baseline_median, median_regression, …" |
+| H1 | Jovie's PR merged | Anthony, Galvin | `git pull` → `python -m src.prepare_data` | Anthony (real folds) | "prepare_data merged: Train 3,516 / Test 877 / 3,484 modelling rows, fingerprint OK" |
+| H2 | Anthony's folds PR merged | Galvin | `git pull` → `python -m src.prepare_data` → `python -m src.validation` | Galvin (real predictions) | "validation merged: 5 folds, 0 shared households" |
+| H3 | Galvin's models PR merged | Anthony | `git pull` → steps above → `python -m src.models` | Anthony (scoring) | "models merged: baseline_median, median_regression, …" |
 | H4 | Scoring PR merged | Whole team | full run order in `README.md` | Model choice | "First comparison: MAE baseline X min vs model Y min (n = …)" |
 | H5 | Model chosen and written down | Anthony | Test scored once | Report | Final table, figure and one failure case |
 

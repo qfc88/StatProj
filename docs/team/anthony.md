@@ -25,7 +25,7 @@ had already seen. Your checks make the comparison honest.
    you can compute by hand.
 2. **Folds.** Split the modelling Train rows into 5 folds by `HOUSEID` (for example
    scikit-learn `GroupKFold`). Print trips and households per fold and confirm 0 households
-   shared between learning and scoring. Hand `folds.csv` to Jovie.
+   shared between learning and scoring. Hand `folds.csv` to Galvin.
 3. **Metrics.** MAE, median absolute error, 90th-percentile absolute error, each unweighted
    and weighted by `trip_weight` (weighted quantile rule in `CONTRACT.md`). Overall, and by
    `mode_group` and `residential_context`, always with the number of trips. Also show how

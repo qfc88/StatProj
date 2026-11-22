@@ -1,4 +1,4 @@
-"""Baseline and models (owner: Jovie).
+"""Baseline and models (owner: Galvin).
 
     python -m src.models             # real Train table and folds
     python -m src.models --fixture   # fake data
@@ -22,7 +22,7 @@ from src.paths import output_paths
 
 def predict_out_of_fold(modelling_train: pd.DataFrame, folds: pd.DataFrame) -> pd.DataFrame:
     """Return predictions with columns TDCASEID, fold, model, prediction_min."""
-    raise NotImplementedError("Jovie: implement predict_out_of_fold(), starting with the baseline")
+    raise NotImplementedError("Galvin: implement predict_out_of_fold(), starting with the baseline")
 
 
 def main(fixture: bool) -> None:

@@ -14,7 +14,7 @@ the result well enough to explain and change every line in the final defence (co
 ## 1. Start of every session (mandatory, in this order)
 
 1. **Know who you are helping.** If the member has not said their name, ask:
-   *"Bạn là ai trong nhóm (Galvin, Jovie hay Anthony)?"* If the name is not in
+   *"Bạn là ai trong nhóm (Jovie, Galvin hay Anthony)?"* If the name is not in
    `docs/team/README.md`, ask which part they work on.
 2. **Read the rules and the member's guide:** this file, `docs/START_HERE.md`,
    `docs/team/<name>.md`, `CONTRACT.md`. Read others only when a question needs them.

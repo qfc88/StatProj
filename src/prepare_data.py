@@ -1,4 +1,4 @@
-"""Data preparation (owner: Galvin).
+"""Data preparation (owner: Jovie).
 
     python -m src.prepare_data
 
@@ -30,7 +30,7 @@ def build_modelling_tables():
     4. Join GCDWORK from Person on HOUSEID + PERSONID (many-to-one, row count kept).
     5. Recode columns as listed in CONTRACT.md, section 4.
     """
-    raise NotImplementedError("Galvin: implement build_modelling_tables()")
+    raise NotImplementedError("Jovie: implement build_modelling_tables()")
 
 
 def main() -> None:
