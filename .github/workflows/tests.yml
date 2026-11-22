@@ -1,0 +1,24 @@
+# Runs the contract and status checks on every pull request and on main.
+# The check name "pytest" is required before a pull request can be merged.
+name: tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install libraries
+        run: python -m pip install -r requirements.txt
+      - name: Run checks
+        run: python -m pytest -q
+      - name: Show project status
+        run: python -m src.status
