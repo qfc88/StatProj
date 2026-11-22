@@ -1,0 +1,555 @@
+<!doctype html><html><head><meta charset='utf-8'><title>NHTS Question 4 exploration</title><style>
+    body { font-family: Arial, sans-serif; color:#172033; max-width:1180px; margin:30px auto; line-height:1.45; }
+    h1,h2,h3 { color:#12355b; } h1 { border-bottom:3px solid #2563eb; padding-bottom:8px; }
+    table { border-collapse:collapse; width:100%; margin:12px 0 25px; font-size:13px; }
+    th { background:#12355b; color:white; text-align:left; } th,td { padding:7px 9px; border-bottom:1px solid #d7deea; }
+    tr:nth-child(even) { background:#f6f8fb; } .note { background:#eef6ff; border-left:4px solid #2563eb; padding:12px; }
+    .warning { background:#fff7ed; border-left:4px solid #b45309; padding:12px; }
+    img { max-width:100%; margin:10px 0 25px; border:1px solid #d7deea; }
+    code { background:#eef2f7; padding:2px 4px; }
+    </style></head><body>
+    <h1>NHTS 2022 Question 4: commute-duration exploration</h1>
+    <div class='note'><strong>Proposed question:</strong> For adult weekday home-based work trips, how accurately can home-work distance, planned mode, departure period, trip direction, and broad residential context predict reported trip duration?</div>
+    <p>The analysis contains 4,266.0 trips with valid duration from 4,269.0 eligible trips, representing 2,384.0 people in 1,928.0 households. The unweighted median duration is 21.0 minutes; the survey-weighted median is 25.0 minutes.</p>
+    <div class='warning'><strong>Interpretation boundary:</strong> exploratory associations are descriptive. Actual trip miles are shown only as a leakage diagnostic. Final prediction must split by household, perform all preprocessing inside training folds, retain an untouched test set, and avoid causal language.</div>
+    <h2>Outcome and sample summary</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>trip_n</th>
+      <th>valid_duration_n</th>
+      <th>missing_duration_n</th>
+      <th>zero_duration_n</th>
+      <th>people_n</th>
+      <th>household_n</th>
+      <th>mean_minutes</th>
+      <th>median_minutes</th>
+      <th>p90_minutes</th>
+      <th>p95_minutes</th>
+      <th>p99_minutes</th>
+      <th>maximum_minutes</th>
+      <th>skewness</th>
+      <th>weighted_median_minutes</th>
+      <th>weighted_p90_minutes</th>
+      <th>weight_effective_sample_size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4269</td>
+      <td>4266</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2384</td>
+      <td>1928</td>
+      <td>27.188</td>
+      <td>21.000</td>
+      <td>50.000</td>
+      <td>60.000</td>
+      <td>96.400</td>
+      <td>950.000</td>
+      <td>13.335</td>
+      <td>25.000</td>
+      <td>51.000</td>
+      <td>1733.634</td>
+    </tr>
+  </tbody>
+</table><h2>Numerical relationships with duration</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>predictor</th>
+      <th>label</th>
+      <th>role</th>
+      <th>complete_n</th>
+      <th>missing_pct</th>
+      <th>spearman_rho</th>
+      <th>cluster_bootstrap_ci_low</th>
+      <th>cluster_bootstrap_ci_high</th>
+      <th>weighted_spearman_rho</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TRPMILES</td>
+      <td>Realised trip miles</td>
+      <td>leakage diagnostic</td>
+      <td>4266</td>
+      <td>0.000</td>
+      <td>0.826</td>
+      <td>0.810</td>
+      <td>0.842</td>
+      <td>0.810</td>
+    </tr>
+    <tr>
+      <td>GCDWORK</td>
+      <td>Great-circle home-work distance (miles)</td>
+      <td>candidate</td>
+      <td>3811</td>
+      <td>10.682</td>
+      <td>0.726</td>
+      <td>0.699</td>
+      <td>0.755</td>
+      <td>0.698</td>
+    </tr>
+    <tr>
+      <td>HHVEHCNT</td>
+      <td>Household vehicle count</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>0.000</td>
+      <td>0.084</td>
+      <td>0.042</td>
+      <td>0.130</td>
+      <td>0.020</td>
+    </tr>
+    <tr>
+      <td>HHFAMINC_IMP</td>
+      <td>Household income band (imputed)</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>0.000</td>
+      <td>0.062</td>
+      <td>0.020</td>
+      <td>0.106</td>
+      <td>0.059</td>
+    </tr>
+    <tr>
+      <td>HBRESDN</td>
+      <td>Home block-group residential-density band</td>
+      <td>density alternative</td>
+      <td>4213</td>
+      <td>1.242</td>
+      <td>-0.058</td>
+      <td>-0.101</td>
+      <td>-0.017</td>
+      <td>-0.052</td>
+    </tr>
+    <tr>
+      <td>HTRESDN</td>
+      <td>Home census-tract residential-density band</td>
+      <td>density alternative</td>
+      <td>4233</td>
+      <td>0.773</td>
+      <td>-0.032</td>
+      <td>-0.075</td>
+      <td>0.010</td>
+      <td>-0.045</td>
+    </tr>
+    <tr>
+      <td>HBPPOPDN</td>
+      <td>Home block-group population-density band</td>
+      <td>density alternative</td>
+      <td>4247</td>
+      <td>0.445</td>
+      <td>-0.021</td>
+      <td>-0.065</td>
+      <td>0.022</td>
+      <td>-0.016</td>
+    </tr>
+    <tr>
+      <td>R_AGE</td>
+      <td>Respondent age</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>0.000</td>
+      <td>-0.001</td>
+      <td>-0.045</td>
+      <td>0.050</td>
+      <td>0.017</td>
+    </tr>
+  </tbody>
+</table><h2>Categorical relationships with duration</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>predictor</th>
+      <th>label</th>
+      <th>role</th>
+      <th>complete_n</th>
+      <th>levels</th>
+      <th>rank_eta</th>
+      <th>dominant_level_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MSACAT</td>
+      <td>Metropolitan-area category</td>
+      <td>candidate alternative</td>
+      <td>4266</td>
+      <td>4</td>
+      <td>0.199</td>
+      <td>43.546</td>
+    </tr>
+    <tr>
+      <td>mode_3cat</td>
+      <td>Trip mode: car, public transport, active travel</td>
+      <td>candidate if mode is known</td>
+      <td>4266</td>
+      <td>3</td>
+      <td>0.161</td>
+      <td>95.151</td>
+    </tr>
+    <tr>
+      <td>RAIL</td>
+      <td>Household MSA heavy-rail status</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>2</td>
+      <td>0.145</td>
+      <td>79.175</td>
+    </tr>
+    <tr>
+      <td>departure_period</td>
+      <td>Departure-time period</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>5</td>
+      <td>0.098</td>
+      <td>33.685</td>
+    </tr>
+    <tr>
+      <td>HOMEOWN</td>
+      <td>Housing tenure</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>4</td>
+      <td>0.058</td>
+      <td>57.718</td>
+    </tr>
+    <tr>
+      <td>TRAVDAY</td>
+      <td>Travel day of week</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>5</td>
+      <td>0.053</td>
+      <td>25.650</td>
+    </tr>
+    <tr>
+      <td>URBRUR</td>
+      <td>Household urban/rural status</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>2</td>
+      <td>0.051</td>
+      <td>78.262</td>
+    </tr>
+    <tr>
+      <td>trip_direction</td>
+      <td>Home-to-work, work-to-home, or other HBW</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>3</td>
+      <td>0.050</td>
+      <td>47.903</td>
+    </tr>
+    <tr>
+      <td>R_SEX_IMP</td>
+      <td>Respondent sex (imputed)</td>
+      <td>candidate</td>
+      <td>4266</td>
+      <td>2</td>
+      <td>0.043</td>
+      <td>54.954</td>
+    </tr>
+  </tbody>
+</table><h2>Duration by mode</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>group</th>
+      <th>raw_n</th>
+      <th>people_n</th>
+      <th>weighted_share_pct</th>
+      <th>mean_minutes</th>
+      <th>median_minutes</th>
+      <th>p90_minutes</th>
+      <th>weighted_median_minutes</th>
+      <th>weighted_p90_minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>car</td>
+      <td>4060</td>
+      <td>2263</td>
+      <td>94.898</td>
+      <td>26.942</td>
+      <td>20.000</td>
+      <td>50.000</td>
+      <td>24.000</td>
+      <td>50.000</td>
+    </tr>
+    <tr>
+      <td>active_travel</td>
+      <td>129</td>
+      <td>74</td>
+      <td>3.010</td>
+      <td>21.287</td>
+      <td>15.000</td>
+      <td>30.000</td>
+      <td>20.000</td>
+      <td>45.000</td>
+    </tr>
+    <tr>
+      <td>public_transport</td>
+      <td>77</td>
+      <td>52</td>
+      <td>2.092</td>
+      <td>50.052</td>
+      <td>45.000</td>
+      <td>90.000</td>
+      <td>40.000</td>
+      <td>69.233</td>
+    </tr>
+  </tbody>
+</table><h2>Duration by direction</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>group</th>
+      <th>raw_n</th>
+      <th>people_n</th>
+      <th>weighted_share_pct</th>
+      <th>mean_minutes</th>
+      <th>median_minutes</th>
+      <th>p90_minutes</th>
+      <th>weighted_median_minutes</th>
+      <th>weighted_p90_minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>home_to_work</td>
+      <td>2044</td>
+      <td>1985</td>
+      <td>47.491</td>
+      <td>25.742</td>
+      <td>20.000</td>
+      <td>45.000</td>
+      <td>20.000</td>
+      <td>47.946</td>
+    </tr>
+    <tr>
+      <td>work_to_home</td>
+      <td>1709</td>
+      <td>1658</td>
+      <td>40.330</td>
+      <td>27.569</td>
+      <td>25.000</td>
+      <td>50.000</td>
+      <td>25.000</td>
+      <td>55.000</td>
+    </tr>
+    <tr>
+      <td>other_home_based_work</td>
+      <td>513</td>
+      <td>327</td>
+      <td>12.180</td>
+      <td>31.680</td>
+      <td>25.000</td>
+      <td>60.000</td>
+      <td>30.000</td>
+      <td>75.000</td>
+    </tr>
+  </tbody>
+</table><h2>Duration by departure period</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>group</th>
+      <th>raw_n</th>
+      <th>people_n</th>
+      <th>weighted_share_pct</th>
+      <th>mean_minutes</th>
+      <th>median_minutes</th>
+      <th>p90_minutes</th>
+      <th>weighted_median_minutes</th>
+      <th>weighted_p90_minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>am_peak_06_08</td>
+      <td>1437</td>
+      <td>1428</td>
+      <td>33.244</td>
+      <td>26.489</td>
+      <td>22.000</td>
+      <td>45.000</td>
+      <td>25.000</td>
+      <td>50.000</td>
+    </tr>
+    <tr>
+      <td>midday_09_15</td>
+      <td>1150</td>
+      <td>985</td>
+      <td>26.907</td>
+      <td>27.116</td>
+      <td>20.000</td>
+      <td>50.000</td>
+      <td>20.000</td>
+      <td>50.657</td>
+    </tr>
+    <tr>
+      <td>pm_peak_16_18</td>
+      <td>1115</td>
+      <td>1099</td>
+      <td>24.972</td>
+      <td>28.179</td>
+      <td>25.000</td>
+      <td>55.000</td>
+      <td>29.446</td>
+      <td>55.685</td>
+    </tr>
+    <tr>
+      <td>overnight_00_05</td>
+      <td>300</td>
+      <td>299</td>
+      <td>8.121</td>
+      <td>30.597</td>
+      <td>30.000</td>
+      <td>55.500</td>
+      <td>25.000</td>
+      <td>58.187</td>
+    </tr>
+    <tr>
+      <td>evening_19_23</td>
+      <td>264</td>
+      <td>246</td>
+      <td>6.756</td>
+      <td>23.246</td>
+      <td>20.000</td>
+      <td>45.000</td>
+      <td>20.000</td>
+      <td>45.000</td>
+    </tr>
+  </tbody>
+</table><h2>Strong categorical predictor overlaps</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>categorical_1</th>
+      <th>categorical_2</th>
+      <th>cramers_v_corrected</th>
+      <th>complete_n</th>
+      <th>levels_1</th>
+      <th>levels_2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RAIL</td>
+      <td>MSACAT</td>
+      <td>0.979</td>
+      <td>4269</td>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>trip_direction</td>
+      <td>departure_period</td>
+      <td>0.556</td>
+      <td>4266</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table><h2>Strong numerical predictor overlaps</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>numeric_1</th>
+      <th>numeric_2</th>
+      <th>spearman_rho</th>
+      <th>complete_n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GCDWORK</td>
+      <td>TRPMILES</td>
+      <td>0.884</td>
+      <td>3813</td>
+    </tr>
+    <tr>
+      <td>HBPPOPDN</td>
+      <td>HBRESDN</td>
+      <td>0.866</td>
+      <td>4199</td>
+    </tr>
+    <tr>
+      <td>HBRESDN</td>
+      <td>HTRESDN</td>
+      <td>0.843</td>
+      <td>4187</td>
+    </tr>
+    <tr>
+      <td>HBPPOPDN</td>
+      <td>HTRESDN</td>
+      <td>0.814</td>
+      <td>4217</td>
+    </tr>
+  </tbody>
+</table><h2>Extreme-value sensitivity</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>analysis</th>
+      <th>n</th>
+      <th>duration_max</th>
+      <th>duration_median</th>
+      <th>gcdwork_duration_spearman</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>all valid duration values</td>
+      <td>3811</td>
+      <td>950.000</td>
+      <td>20.000</td>
+      <td>0.726</td>
+    </tr>
+    <tr>
+      <td>duration at or below sample p99</td>
+      <td>3776</td>
+      <td>95.000</td>
+      <td>20.000</td>
+      <td>0.738</td>
+    </tr>
+  </tbody>
+</table><h2>Distance-duration relationship by mode</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>mode</th>
+      <th>complete_n</th>
+      <th>gcdwork_duration_spearman</th>
+      <th>median_duration</th>
+      <th>median_gcdwork</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>car</td>
+      <td>3633</td>
+      <td>0.759</td>
+      <td>20.000</td>
+      <td>6.477</td>
+    </tr>
+    <tr>
+      <td>active_travel</td>
+      <td>114</td>
+      <td>0.631</td>
+      <td>15.000</td>
+      <td>0.783</td>
+    </tr>
+    <tr>
+      <td>public_transport</td>
+      <td>64</td>
+      <td>0.639</td>
+      <td>45.000</td>
+      <td>4.596</td>
+    </tr>
+  </tbody>
+</table>
+    <h2>Figures</h2><img src='duration_distribution.png' alt='duration_distribution.png'><img src='distance_duration_by_mode.png' alt='distance_duration_by_mode.png'><img src='duration_by_mode.png' alt='duration_by_mode.png'><img src='numeric_association_heatmap.png' alt='numeric_association_heatmap.png'>
+    <h2>Recommended proposal resolution</h2>
+    <ol><li>Use reported duration in minutes as the outcome and adult weekday home-based work trips as the population.</li>
+    <li>Define prediction time as immediately before departure, after planned mode is known. This makes mode and departure period eligible while excluding realised trip miles.</li>
+    <li>Use a median-duration rule as baseline, a transparent Gamma/log-linear or quantile regression as the main model, and a random forest or gradient-boosted tree as the nonlinear benchmark.</li>
+    <li>Use household-grouped cross-validation and reserve a final household or Census-division holdout. Report MAE and median absolute error in minutes, tail error, calibration of prediction intervals, and subgroup performance.</li>
+    <li>Pre-register sensitivity analyses for zero/extreme durations, missing <code>GCDWORK</code>, car-only trips, outbound home-to-work trips, survey weights, and alternative density measures.</li></ol>
+    </body></html>

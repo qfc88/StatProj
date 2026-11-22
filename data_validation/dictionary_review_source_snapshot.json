@@ -1,0 +1,13 @@
+{
+  "Data\\Citation.pdf": "a419325e1632fbf9d36ead1c6bf2b50841e00bbc43599012cea06dd364fdb956",
+  "Data\\hhv2pub.csv": "d459a63d9bf818f38ea4a222fc0ae038e78509011cba3233762abd39d785745b",
+  "Data\\ldtv2pub.csv": "523da0b5778061e1c405d3c656c30184e1e366dc913fd369c135fa7ca29baad8",
+  "Data\\NHTS_2022_Codebook_V2.1.xlsx": "7e10ff62be0a72b03528f2469e8da850b335b7d761cf6efdfe9eba9b8a513d96",
+  "Data\\NHTS_2022_Data_Dictionary_V2.1.xlsx": "6bb6a6518224ef62d511494ea7882a5f533becc1301ac06483dd65dc042db073",
+  "Data\\perv2pub.csv": "fa4d816ccd4d1975ff8afd394ce50b1d2326fa2c0b07b8d7f36636ea670fd89c",
+  "Data\\tripv2pub.csv": "f821357ffbab035a4a6704f575cfd20cd7eb4d2f890bd69e1345776377a66c82",
+  "Data\\vehv2pub.csv": "eb7bc61dde5f81d08b2437a053aff2eabe9575a6befbfed6bc9a36159c23b52a",
+  "NHTS_2022_correlation_analysis.ipynb": "896b1a1127c513eb24bf5fc4ddea13c1101f3e7ecec691a1fd98e6322aa10f6c",
+  "NHTS_2022_data_exploration.ipynb": "c06ea70b2fbebc3215f18088a543403682bcd724a829db2aa72cbc36f4fade39",
+  "NHTS_2022_research_directions.ipynb": "aaabafc7c1ac68137f98e758431d66f98bef2f191becb679c1e8619940de9e1e"
+}

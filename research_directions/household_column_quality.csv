@@ -1,0 +1,23 @@
+column,definition,analysis_type,valid_n,missing_pct,distinct,dominant_pct
+HHSIZE,Total number of people in household,numeric/ordered,7893,0.0,10,42.30330672748004
+NUMADLT,Count of adult household members at least 18 years old,numeric/ordered,7893,0.0,8,56.08767262131003
+DRVRCNT,Number of drivers in the household,numeric/ordered,7893,0.0,8,51.425313568985175
+WRKCOUNT,Count of workers in household,numeric/ordered,7893,0.0,7,35.34777651083238
+HHVEHCNT,Total number of vehicles in household,numeric/ordered,7893,0.0,13,40.52958317496516
+HBPPOPDN,"Category of population density (persons per square mile) in the
+census block group of the household's home location",numeric/ordered,7855,0.4814392499683263,8,23.539147040101845
+HTPPOPDN,"Category of population density (persons per square mile) in the
+census tract of the household's home location",numeric/ordered,7860,0.41809198023565186,8,21.272264631043257
+HBRESDN,"Category of housing units per square mile in the census block group
+of the household's home location",numeric/ordered,7831,0.7855061446851641,8,21.00625718299068
+HTRESDN,"Category of housing units per square mile in the census tract of the
+household's home location",numeric/ordered,7832,0.7728366907386292,8,21.28447395301328
+HTEEMPDN,"Category of workers per square mile in the census tract of the
+household's home location",numeric/ordered,7837,0.7094894210059546,8,20.224575730509123
+HHFAMINC_IMP,Household income (imputed),numeric/ordered,7893,0.0,11,17.92727733434689
+RAIL,MSA heavy rail status for household,nominal,7893,0.0,2,77.09362726466489
+URBRUR,Household in urban/rural area,nominal,7893,0.0,2,79.89357658684911
+MSACAT,MSA category for the HH home address,nominal,7893,0.0,4,40.94767515520081
+HOMEOWN,Whether home owned or rented,nominal,7893,0.0,4,46.4968959837831
+LIF_CYC,Life Cycle classification for the household,nominal,7893,0.0,10,26.795895096921324
+HOMETYPE,Type of home,nominal,7893,0.0,5,68.79513492968454

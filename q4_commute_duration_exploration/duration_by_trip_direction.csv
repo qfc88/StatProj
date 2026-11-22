@@ -1,0 +1,4 @@
+group,raw_n,people_n,weighted_share_pct,mean_minutes,median_minutes,p90_minutes,weighted_median_minutes,weighted_p90_minutes
+home_to_work,2044,1985,47.490820340966216,25.742172211350294,20.0,45.0,20.0,47.94643816431664
+work_to_home,1709,1658,40.329529480478335,27.568753657109422,25.0,50.0,25.0,55.0
+other_home_based_work,513,327,12.17965017855547,31.680311890838208,25.0,60.0,30.0,75.0

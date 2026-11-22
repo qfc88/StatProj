@@ -1,0 +1,14 @@
+# Libraries used by the code in src/ and tests/ (Python 3.10-3.13; 3.12 recommended).
+# The lower bounds are the versions used for the EDA (Conda, Python 3.12.7):
+# pandas 2.2.2, numpy 1.26.4, openpyxl 3.1.5, matplotlib 3.9.2, scikit-learn 1.5.1,
+# statsmodels 0.14.2, pytest 7.4.4. Upper bounds avoid major changes during the project.
+# The household split is verified by a fingerprint (CONTRACT.md, section 3), not by versions.
+pandas>=2.2.2,<2.3
+numpy>=1.26.4,<2.3
+openpyxl>=3.1.5,<3.2
+matplotlib>=3.9.2,<3.11
+scikit-learn>=1.5.1,<1.7
+statsmodels>=0.14.2,<0.15
+pytest>=7.4.4,<9
+# To open and run the EDA notebook in VS Code or Jupyter
+ipykernel>=6.28,<8

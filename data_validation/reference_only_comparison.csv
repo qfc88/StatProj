@@ -1,0 +1,3 @@
+status,test,observed,expected,evidence_role
+PASS,reference field-occurrence row count,427,427,NONE — excluded from validation result
+PASS,reference table-field pairs match local CSVs,427,427,NONE — excluded from validation result

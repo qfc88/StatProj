@@ -1,0 +1,4 @@
+mode,complete_n,gcdwork_duration_spearman,median_duration,median_gcdwork
+car,3633,0.7589866257678634,20.0,6.47749120135278
+active_travel,114,0.6314928062964268,15.0,0.783387572844846
+public_transport,64,0.6389598143687159,45.0,4.59561106770064

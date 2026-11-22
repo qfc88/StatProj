@@ -1,0 +1,155 @@
+1 Purpose
+The project is an opportunity to use statistical learning to answer a consequential, clearly defined question. A
+successful project connects a decision or scientific question to a carefully curated dataset, compares reasonable
+approaches, evaluates them appropriately, and communicates what the evidence does and does not support.
+The project should demonstrate the course learning outcomes:
+1. connect a real question to a mathematical or statistical formulation;
+2. describe and curate data suitable for that formulation;
+3. use and compare tools taught in the course or beyond; you should be able to justify and defend your approach;
+4. evaluate generalisation, uncertainty, assumptions, and limitations; and
+5. translate the analysis into an appropriate recommendation or scientific conclusion.
+2 Team rules
+• Ateam may consist of at most four members; teams will be assigned.
+• Anindividual project is allowed if approved by the instructor after project proposal submission.
+• Every member must make a substantive contribution to question formulation, data work, analysis, and
+communication.
+• Every member must speak during the presentation and may be asked any question during the defence.
+• Normally, members receive the same report score. Presentation and defence scores may differ when individual
+understanding or contribution is demonstrably uneven.
+1
+3 What the project must contain
+3.1 A proper question
+State one primary question in a single sentence. A useful template is:
+For [decision maker or scientific audience], can [information available at the decision time] help
+[predict, compare, segment, recommend, or prioritise] [well-defined outcome] for [population,
+place, and period]?
+The question must be important enough that an answer would influence a decision, resource allocation, scientific
+understanding, or public discussion. It must also be narrow enough to answer within the course timeline.
+Do not begin with “we will apply random forests.” Begin with the question. Methods should follow from the
+estimand, prediction target, decision, and data structure.
+Use causal language such as “effect,” “impact,” or “causes” only when the sampling and identification strategy
+support it. Most course projects will establish prediction or association, not causation.
+3.2 Dataset
+Teams must construct an analysis-ready dataset rather than merely download a file and fit a model. Curation may
+include combining sources, reshaping records into the correct observational unit, creating new variables, resolving
+identifiers, documenting missing elements, or defining a prediction time.
+Required data documentation:
+• original source, access date, licence or terms of use, and a persistent link;
+• unit of observation and target population;
+• inclusion and exclusion criteria;
+• data dictionary for variables used in the analysis;
+• all joins, filters, recodes, aggregations, and derived variables;
+• missing-data, duplicate, outlier, and measurement-error checks;
+• afrozen raw-data snapshot or a script that recreates it;
+• limitations in coverage, sampling, proxies, and label quality; and
+• confirmation that no confidential or personally identifying information is exposed.
+If an API or continuously updated source is used, save the retrieval date, query, parameters, response metadata,
+and an immutable analysis snapshot. If data cannot legally be redistributed, provide a retrieval script and clear
+instructions instead.
+3.3 A purposeful variety of tools
+The analysis must include all of the following:
+1. Exploratory analysis: distributions, missingness, dependence, class balance, subgroups, and informative
+graphics.
+2. A transparent baseline: for example, a mean or prevalence rule, a simple linear/logistic model, or a
+popularity recommender.
+3. At least two statistical-learning approaches: preferably from different course families, such as regularised
+regression versus random forest, multinomial logit versus a tree model, or PCA plus clustering versus clustering
+on raw features. It can of course include tools/techniques not taught in class as well.
+4. Out-of-sample evaluation: a split or resampling scheme that matches how the model would be used.
+5. Interpretation and diagnosis: uncertainty, residuals or errors, sensitivity checks, important failure cases,
+and limitations.
+Using many algorithms without a reason will not earn extra credit. Each method must have a role, which can be:
+baseline, interpretation, benchmark, dimension reduction, segmentation, recommendation, survival modelling, etc.
+2
+4 Validation rules
+• Define the outcome and evaluation metric before comparing models.
+• Keep a final test set untouched until the analysis plan is stable.
+• Split by time for future prediction, by person for repeated observations, and by location or institution when
+deployment is to a new group.
+• Perform preprocessing, feature selection, imputation, and tuning using training data only.
+• Compare against a simple baseline and report the uncertainty or variability of performance.
+• For imbalanced outcomes, do not rely on accuracy alone; consider precision, recall, AUC, ROC-AUC, etc.
+• For regression, report an interpretable error scale in addition to any dimensionless metric.
+• For recommenders, separate users or interactions correctly and report coverage or popularity bias as well as
+prediction accuracy.
+• For survival outcomes, respect censoring and avoid treating censored times as observed event times.
+• For multiple testing, report the family of hypotheses and control a suitable error rate such as FDR.
+• Report meaningful negative results. Do not select only the most favourable metric, subgroup, or split.
+5 Use of generative AI
+AI tools may be used to brainstorm code, debug, improve prose, or prototype a visual, subject to course and
+university policy. They do not replace statistical judgement.
+If AI is used:
+• retain an AI_USE.md log naming the tool, date, purpose, and representative prompts;
+• identify material AI-generated code, text, or graphics and explain how it was checked;
+• test all generated code and verify every statistical claim and citation;
+• do not upload confidential, licensed, or personal data to an unauthorised service;
+• do not fabricate observations, citations, results, or a defence answer; and
+• be prepared to explain and modify every submitted line of analysis.
+Example of an acceptable prompt:
+“Using this data dictionary and a pre-registered temporal split, propose three ggplot designs that compare
+calibration across groups. Do not calculate results. Explain what each visual would reveal and provide
+R code using only columns listed here.”
+The team remains fully responsible for the submitted work, including mistakes introduced by an AI system.
+6 Required deliverables
+6.1 Project proposal
+A one-page proposal is a required approval checkpoint. It should contain:
+• team members and provisional title;
+• primary question and why it matters;
+• intended decision maker or scientific audience;
+• proposed sources and evidence that the data are accessible;
+• unit of observation, expected outcome, and approximate sample size;
+• two or three candidate methods and the proposed validation design;
+• the largest anticipated risk and a fallback plan; and
+• ashort division of responsibilities.
+The proposal carries 5 points and full score is given if all the checkpoints above are addressed, and the project is
+approved by the instructor. The project must be approved before substantial work begins.
+3
+6.2 Reproducible analysis package
+Submit a clearly organised project folder or repository containing:
+README.md
+how to reproduce the analysis
+data_raw/ or get_data.R frozen permissible data or retrieval code
+data_processed/
+analysis-ready data, if redistribution is allowed
+R/
+analysis/
+figures/
+report/
+slides/
+AI_USE.md
+functions or reusable analysis code
+ordered R scripts or R Markdown/Quarto files
+final figures generated from code
+final report source and PDF/HTML
+final presentation source and PDF
+required disclosure, if AI tools were used
+The analysis should run from raw or retrieved data to final tables and figures without undocumented manual steps.
+Large raw files need not be submitted if the retrieval instructions are reliable.
+Note that the document mentions R, but you can use any software of choice.
+6.3 Final report (and project analysis package)— 10 points
+The main text of the report should be at most six A4 pages in 11- or 12-point font, excluding references and a
+concise technical appendix. The appendix is supporting material and is not a way to move essential reasoning out
+of the graded report.
+Required sections:
+1. Abstract: the question, data, principal method, and main finding.
+2. Problem and relevance: decision or scientific context; precise target.
+3. Data curation: provenance, unit, construction, quality, and limitations.
+4. Methods and validation: baseline, competing tools, assumptions, metrics, and split design.
+5. Results: out-of-sample comparisons, uncertainty, diagnostics, and clear figures.
+6. Discussion: answer to the question, practical meaning, failures, ethics, and next step.
+7. Reproducibility and contributions: code/data location and each member’s contribution.
+8. References and AI-use disclosure.
+6.4 Presentation and defence — 15 points
+Unless the instructor announces a different schedule, plan for a 12–15-minute presentation followed by
+approximately 5–7 minutes of questions and defence.
+The presentation should:
+• motivate the question and name the audience within the first minute;
+• show how raw records became the analysis dataset;
+• justify the baseline, methods, validation scheme, and metrics;
+• focus on two or three decisive results rather than every model tried;
+• include readable, self-explanatory figures with units and uncertainty;
+• present one important model failure or limitation; and
+• finish with a direct answer and an appropriate action or next analysis.
+During the defence, the team should be able to explain sampling, leakage risks, variable availability, assumptions,
+model choices, tuning, uncertainty, fairness or ethics, and why the conclusion would change under plausible alternative
+decisions.

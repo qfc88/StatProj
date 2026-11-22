@@ -1,0 +1,10 @@
+predictor,label,role,complete_n,levels,rank_eta,dominant_level_pct
+MSACAT,Metropolitan-area category,candidate alternative,4266,4,0.19856454060842674,43.54649800890138
+mode_3cat,"Trip mode: car, public transport, active travel",candidate if mode is known,4266,3,0.1613569598241349,95.15108924806746
+RAIL,Household MSA heavy-rail status,candidate,4266,2,0.144509398449176,79.17545092527524
+departure_period,Departure-time period,candidate,4266,5,0.09823560183935347,33.68495077355837
+HOMEOWN,Housing tenure,candidate,4266,4,0.05751894975617188,57.71843523073319
+TRAVDAY,Travel day of week,candidate,4266,5,0.052687036822564925,25.650035137034433
+URBRUR,Household urban/rural status,candidate,4266,2,0.05141965048531437,78.26188802998361
+trip_direction,"Home-to-work, work-to-home, or other HBW",candidate,4266,3,0.0496745203714784,47.90349027875381
+R_SEX_IMP,Respondent sex (imputed),candidate,4266,2,0.04334867543876549,54.95432185523542

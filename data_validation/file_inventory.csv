@@ -1,0 +1,9 @@
+file,extension,bytes,sha256,read_status,rows_or_pages,columns_or_sheets,note
+Citation.pdf,.pdf,49313,a419325e1632fbf9d36ead1c6bf2b50841e00bbc43599012cea06dd364fdb956,PASS,1,PDF pages,
+hhv2pub.csv,.csv,1767471,d459a63d9bf818f38ea4a222fc0ae038e78509011cba3233762abd39d785745b,PASS,7893,43,
+ldtv2pub.csv,.csv,6418788,523da0b5778061e1c405d3c656c30184e1e366dc913fd369c135fa7ca29baad8,PASS,16997,74,
+NHTS_2022_Codebook_V2.1.xlsx,.xlsx,163714,7e10ff62be0a72b03528f2469e8da850b335b7d761cf6efdfe9eba9b8a513d96,PASS,2718,Household | Person | Vehicle | Trip | Long Distance,
+NHTS_2022_Data_Dictionary_V2.1.xlsx,.xlsx,29000,6bb6a6518224ef62d511494ea7882a5f533becc1301ac06483dd65dc042db073,PASS,275,Dictionary,
+perv2pub.csv,.csv,12473819,fa4d816ccd4d1975ff8afd394ce50b1d2326fa2c0b07b8d7f36636ea670fd89c,PASS,16997,153,
+tripv2pub.csv,.csv,17505566,f821357ffbab035a4a6704f575cfd20cd7eb4d2f890bd69e1345776377a66c82,PASS,31074,102,
+vehv2pub.csv,.csv,4455967,eb7bc61dde5f81d08b2437a053aff2eabe9575a6befbfed6bc9a36159c23b52a,PASS,14684,55,

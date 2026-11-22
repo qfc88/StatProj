@@ -1,0 +1,31 @@
+status,area,test,observed,expected,note
+PASS,Household,required key columns present,none missing,none missing,
+PASS,Household,rows with missing key,0,0,
+PASS,Household,rows in duplicate keys,0,0,
+PASS,Household,exact duplicate rows,0,0,
+PASS,Household,10-digit HOUSEID format,0,0,
+PASS,Person,required key columns present,none missing,none missing,
+PASS,Person,rows with missing key,0,0,
+PASS,Person,rows in duplicate keys,0,0,
+PASS,Person,exact duplicate rows,0,0,
+PASS,Person,10-digit HOUSEID format,0,0,
+PASS,Person,PERSONID is a two-digit-compatible nonnegative integer,0,0,CSV storage may omit leading zeroes.
+PASS,Vehicle,required key columns present,none missing,none missing,
+PASS,Vehicle,rows with missing key,0,0,
+PASS,Vehicle,rows in duplicate keys,0,0,
+PASS,Vehicle,exact duplicate rows,0,0,
+PASS,Vehicle,10-digit HOUSEID format,0,0,
+PASS,Vehicle,VEHID is a two-digit-compatible nonnegative integer,0,0,CSV storage may omit leading zeroes.
+PASS,Trip,required key columns present,none missing,none missing,
+PASS,Trip,rows with missing key,0,0,
+PASS,Trip,rows in duplicate keys,0,0,
+PASS,Trip,exact duplicate rows,0,0,
+PASS,Trip,10-digit HOUSEID format,0,0,
+PASS,Trip,PERSONID is a two-digit-compatible nonnegative integer,0,0,CSV storage may omit leading zeroes.
+PASS,Trip,TRIPID is a two-digit-compatible nonnegative integer,0,0,CSV storage may omit leading zeroes.
+PASS,Long Distance,required key columns present,none missing,none missing,
+PASS,Long Distance,rows with missing key,0,0,
+PASS,Long Distance,rows in duplicate keys,0,0,
+PASS,Long Distance,exact duplicate rows,0,0,
+PASS,Long Distance,10-digit HOUSEID format,0,0,
+PASS,Long Distance,PERSONID is a two-digit-compatible nonnegative integer,0,0,CSV storage may omit leading zeroes.

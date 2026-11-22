@@ -1,0 +1,3 @@
+analysis,n,duration_max,duration_median,gcdwork_duration_spearman
+all valid duration values,3811,950.0,20.0,0.7264944999127922
+duration at or below sample p99,3776,95.0,20.0,0.737564752636086

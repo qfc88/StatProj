@@ -1,0 +1,3 @@
+group,raw_n,people_n,weighted_share_pct,mean_minutes,median_minutes,p90_minutes,weighted_median_minutes,weighted_p90_minutes
+1,3340,1871,78.81391609996825,26.48682634730539,20.0,50.0,20.0,50.0
+2,926,510,21.186083900031754,29.7170626349892,25.0,55.0,30.0,60.0

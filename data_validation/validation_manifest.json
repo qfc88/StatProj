@@ -1,0 +1,31 @@
+{
+  "validator_version": "1.0.0",
+  "generated_at_utc": "2026-10-17T04:16:43.981531+00:00",
+  "data_directory": "D:\\StatProject\\Data",
+  "output_directory": "D:\\StatProject\\data_validation",
+  "overall_status": "PASS",
+  "evidence_sources": {
+    "FHWA NHTS overview": "https://www.fhwa.dot.gov/policyinformation/nhts.cfm",
+    "FHWA latest NextGen NHTS data": "https://www.fhwa.dot.gov/policyinformation/nextgen-nhts-data.cfm",
+    "NHTS 2022 downloads": "https://nhts.ornl.gov/downloads",
+    "NHTS 2022 documentation": "https://nhts.ornl.gov/documentation",
+    "NHTS 2022 FAQ": "https://nhts.ornl.gov/faq",
+    "NHTS 2022 User's Guide": "https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf"
+  },
+  "reference_only_file": "D:\\StatProject\\NHTS_2022_complete_data_dictionary.xlsx",
+  "reference_only_excluded_from_result": true,
+  "output_files": [
+    "required_file_validation.csv",
+    "file_inventory.csv",
+    "table_key_validation.csv",
+    "schema_validation.csv",
+    "relationship_validation.csv",
+    "official_control_totals.csv",
+    "codebook_consistency.csv",
+    "citation_validation.csv",
+    "government_source_reachability.csv",
+    "reference_only_comparison.csv",
+    "validation_manifest.json",
+    "validation_report.md"
+  ]
+}

@@ -1,0 +1,19 @@
+variable,label,role,kind,valid_n,missing_pct,distinct,dominant_pct
+TRVLCMIN,Reported trip duration (minutes),outcome,numeric,4266,0.07027406886858749,88,17.416783872480075
+GCDWORK,Great-circle home-work distance (miles),candidate,numeric,3813,10.681658468025299,2053,1.5211119853134014
+R_AGE,Respondent age,candidate,numeric,4269,0.0,67,3.2794565472007493
+HHFAMINC_IMP,Household income band (imputed),candidate,ordered,4269,0.0,11,17.70906535488405
+HHVEHCNT,Household vehicle count,candidate,numeric,4269,0.0,11,45.58444600609042
+HBPPOPDN,Home block-group population-density band,density alternative,ordered,4250,0.44506910283438744,8,22.470588235294116
+HBRESDN,Home block-group residential-density band,density alternative,ordered,4216,1.2415085500117125,8,21.845351043643262
+HTRESDN,Home census-tract residential-density band,density alternative,ordered,4236,0.7730147575544624,8,22.261567516525023
+TRPMILES,Realised trip miles,leakage diagnostic,numeric,4269,0.0,3712,0.1639728273600375
+mode_3cat,"Trip mode: car, public transport, active travel",candidate if mode is known,categorical,4269,0.0,3,95.15108924806746
+trip_direction,"Home-to-work, work-to-home, or other HBW",candidate,categorical,4269,0.0,3,47.90349027875381
+departure_period,Departure-time period,candidate,categorical,4266,0.07027406886858749,5,33.68495077355837
+TRAVDAY,Travel day of week,candidate,categorical,4269,0.0,5,25.650035137034433
+RAIL,Household MSA heavy-rail status,candidate,categorical,4269,0.0,2,79.17545092527524
+URBRUR,Household urban/rural status,candidate,categorical,4269,0.0,2,78.26188802998361
+MSACAT,Metropolitan-area category,candidate alternative,categorical,4269,0.0,4,43.54649800890138
+HOMEOWN,Housing tenure,candidate,categorical,4269,0.0,4,57.71843523073319
+R_SEX_IMP,Respondent sex (imputed),candidate,categorical,4269,0.0,2,54.95432185523542

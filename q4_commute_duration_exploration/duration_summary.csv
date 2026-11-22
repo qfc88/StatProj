@@ -1,0 +1,2 @@
+trip_n,valid_duration_n,missing_duration_n,zero_duration_n,people_n,household_n,mean_minutes,median_minutes,p90_minutes,p95_minutes,p99_minutes,maximum_minutes,skewness,weighted_median_minutes,weighted_p90_minutes,weight_effective_sample_size
+4269,4266,3,1,2384,1928,27.187998124706986,21.0,50.0,60.0,96.40000000000146,950.0,13.33498867401288,25.0,51.0,1733.6343361905363

@@ -1,0 +1,9 @@
+status,area,test,observed,expected,note
+PASS,required files,hhv2pub.csv,True,True,
+PASS,required files,perv2pub.csv,True,True,
+PASS,required files,vehv2pub.csv,True,True,
+PASS,required files,tripv2pub.csv,True,True,
+PASS,required files,ldtv2pub.csv,True,True,
+PASS,required files,NHTS_2022_Codebook_V2.1.xlsx,True,True,
+PASS,required files,NHTS_2022_Data_Dictionary_V2.1.xlsx,True,True,
+PASS,required files,Citation.pdf,True,True,

@@ -1,0 +1,30 @@
+# Python and Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# Office lock files (e.g. ~$NHTS_2022_complete_data_dictionary.xlsx)
+~$*
+
+# Generated files; rebuild them with the scripts in src/
+outputs/
+
+# Local notebook edit history (kept on the author's machine only)
+data_validation/notebook_backups/
+
+# Local AI-assistant settings
+.claude/
+
+# Personal or internal files that must not be published
+StatisticalProposal_LS03_Team1*.docx
+prompt-1.md
+
+# Legacy table exported from the full sample (includes Test households); not used by src/
+nhts_weekday_commute_analysis.csv
+
+# Raw NHTS data. The team decides whether to commit it (see README, "Data").
+# To keep the data out of Git, remove the "#" from the next line.
+# Data/

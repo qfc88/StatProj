@@ -1,0 +1,11 @@
+metric,observed_cases,official_cases,case_difference,case_status,observed_weighted_total,official_weighted_total,weighted_difference,weighted_status,overall_status,official_source
+Households,7893,7893,0,PASS,127544707.0,127544707.0,0.0,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf
+Persons,16997,16997,0,PASS,305560925.0000611,305560925.0,6.109476089477539e-05,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf
+Personally Owned Vehicle,14684,14684,0,PASS,232837104.1466757,232837104.0,0.146675705909729,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf
+Trips (Annualized),31074,31074,0,PASS,253754536506.74,253754536507.0,-0.260009765625,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf
+Workers,7783,7783,0,PASS,158009510.32546008,158009510.0,0.3254600763320923,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf
+Drivers,13434,13434,0,PASS,231803889.46937963,231803889.0,0.46937963366508484,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf
+Person Trips,31074,31074,0,PASS,253754536506.74,253754536507.0,-0.260009765625,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf
+Person Miles of Travel,31060,31060,0,PASS,3184397491594.1377,3184397491594.0,0.1376953125,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf
+Vehicle Trips,20490,20490,0,PASS,160953195395.04346,160953195395.0,0.04345703125,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf
+Vehicle Miles of Travel,20487,20487,0,PASS,1848031458831.8704,1848031458832.0,-0.129638671875,PASS,PASS,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf

@@ -1,0 +1,7 @@
+source,url,status,http_status,final_url,note
+FHWA NHTS overview,https://www.fhwa.dot.gov/policyinformation/nhts.cfm,PASS,200,https://www.fhwa.dot.gov/policyinformation/nhts.cfm,Official source was reachable at validation time.
+FHWA latest NextGen NHTS data,https://www.fhwa.dot.gov/policyinformation/nextgen-nhts-data.cfm,PASS,200,https://www.fhwa.dot.gov/policyinformation/nextgen-nhts-data.cfm,Official source was reachable at validation time.
+NHTS 2022 downloads,https://nhts.ornl.gov/downloads,PASS,200,https://nhts.ornl.gov/downloads,Official source was reachable at validation time.
+NHTS 2022 documentation,https://nhts.ornl.gov/documentation,PASS,200,https://nhts.ornl.gov/documentation,Official source was reachable at validation time.
+NHTS 2022 FAQ,https://nhts.ornl.gov/faq,PASS,200,https://nhts.ornl.gov/faq,Official source was reachable at validation time.
+NHTS 2022 User's Guide,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf,PASS,200,https://nhts.ornl.gov/assets/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf,Official source was reachable at validation time.

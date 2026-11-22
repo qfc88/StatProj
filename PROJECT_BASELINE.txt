@@ -1,0 +1,73 @@
+PROJECT BASELINE
+Recorded: 2026-10-17 (Asia/Singapore)
+
+Authority
+PROJECT_REQUIREMENTS.txt preserves the full assignment brief supplied by the user.
+Treat that brief as the baseline prerequisite for all project planning, analysis,
+reporting, and presentation work. This checklist summarizes it; the full brief
+controls if details differ. Later instructor instructions may revise the baseline.
+Existing notebooks and data have not yet been audited against these requirements.
+
+Approval checkpoint
+A one-page proposal and instructor approval are required before substantial work
+begins. Approval status has not been supplied; do not assume it is approved.
+
+Question and scope
+- Define one consequential, narrow primary question in a single sentence.
+- Specify audience, decision, population/place/period, target, observational unit,
+  and information available at decision time. Choose methods from the question.
+- Use causal claims only when sampling and identification support them.
+
+Data prerequisites
+- Construct an analysis-ready dataset with documented curation.
+- Record source, access date, licence/terms, persistent link, target population,
+  unit, inclusion/exclusion rules, and a dictionary of all analysis variables.
+- Document joins, filters, recodes, aggregations, derived variables, and checks
+  for missingness, duplicates, outliers, and measurement error.
+- Preserve permissible frozen raw data or reproducible retrieval code. For APIs
+  record query, parameters, response metadata, retrieval date, and immutable snapshot.
+- Explain coverage, sampling, proxy, and label limitations; expose no confidential
+  or personally identifying information. Respect redistribution restrictions.
+
+Analysis and validation
+- Include EDA, a transparent baseline, and at least two statistical-learning
+  approaches with justified roles, preferably from different method families.
+- Define outcome and evaluation metrics before model comparison.
+- Match validation to intended use: time, person, location, or institution splits
+  as appropriate. Keep a final test set untouched until the analysis plan is stable.
+- Fit preprocessing, imputation, feature selection, and tuning on training data only.
+- Compare out-of-sample results with baseline and report uncertainty/variability.
+- Diagnose errors, residuals, assumptions, subgroups, sensitivity, failure cases,
+  and limitations. Report meaningful negative results without cherry-picking.
+- Use suitable metrics for imbalance; interpretable error units for regression;
+  correct interaction/user separation plus coverage/popularity bias for recommenders;
+  censoring-aware survival analysis; and suitable multiplicity control when applicable.
+
+Required deliverables
+- Proposal (one page, 5 points): team/title, question/relevance/audience, accessible
+  sources, unit/outcome/approximate sample size, 2-3 candidate methods, validation,
+  largest risk/fallback, and responsibility split; instructor approval required.
+- Reproducible package: README, raw data or retrieval code, processed data where
+  permitted, reusable code, ordered analysis, generated figures, report, slides,
+  and AI_USE.md. Any software is allowed. No undocumented manual steps.
+- Report and package (10 points): at most six A4 pages of main text, 11-12 point
+  font, excluding references and a concise supporting technical appendix.
+- Report sections: abstract; problem/relevance; data curation; methods/validation;
+  results; discussion; reproducibility/contributions; references/AI disclosure.
+- Presentation/defence (15 points): normally 12-15 minutes plus 5-7 minutes Q&A.
+  Name audience/question in first minute; explain curation, methods and validation;
+  focus on 2-3 decisive results with readable units/uncertainty; show an important
+  failure/limitation; end with a direct answer and appropriate next action.
+
+Team and AI obligations
+- Maximum four assigned team members. Individual work requires instructor approval
+  after proposal submission. Every member contributes across formulation, data,
+  analysis, and communication, speaks, and can defend the whole analysis.
+- Maintain AI_USE.md with tool, date, purpose, representative prompts, material
+  AI-generated content, and how it was checked. Test generated analysis code and
+  verify statistical claims/citations. Never fabricate data, results, or citations.
+- Team members remain responsible and must explain/modify submitted analysis.
+
+Known open prerequisites
+Instructor approval, team roster, selected primary question, final data scope,
+analysis plan, and validation design have not been established by this baseline.

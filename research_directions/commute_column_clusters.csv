@@ -1,0 +1,100 @@
+column,distance_cut,cluster,association
+HHSIZE,0.3,1,absolute Spearman
+NUMADLT,0.3,1,absolute Spearman
+DRVRCNT,0.3,1,absolute Spearman
+WRKCOUNT,0.3,3,absolute Spearman
+HHVEHCNT,0.3,2,absolute Spearman
+HBPPOPDN,0.3,7,absolute Spearman
+HTPPOPDN,0.3,7,absolute Spearman
+HBRESDN,0.3,7,absolute Spearman
+HTRESDN,0.3,7,absolute Spearman
+HTEEMPDN,0.3,7,absolute Spearman
+WBPPOPDN,0.3,9,absolute Spearman
+WTPPOPDN,0.3,9,absolute Spearman
+WTEEMPDN,0.3,9,absolute Spearman
+DBPPOPDN,0.3,8,absolute Spearman
+DTPPOPDN,0.3,8,absolute Spearman
+DTEEMPDN,0.3,8,absolute Spearman
+R_AGE,0.3,6,absolute Spearman
+HHFAMINC_IMP,0.3,4,absolute Spearman
+EDUC,0.3,5,absolute Spearman
+GCDWORK,0.3,11,absolute Spearman
+TRPMILES,0.3,11,absolute Spearman
+TRVLCMIN,0.3,11,absolute Spearman
+EMPLOYMENT2,0.3,12,absolute Spearman
+WKFMHM22,0.3,10,absolute Spearman
+HHSIZE,0.45,1,absolute Spearman
+NUMADLT,0.45,1,absolute Spearman
+DRVRCNT,0.45,1,absolute Spearman
+WRKCOUNT,0.45,2,absolute Spearman
+HHVEHCNT,0.45,1,absolute Spearman
+HBPPOPDN,0.45,6,absolute Spearman
+HTPPOPDN,0.45,6,absolute Spearman
+HBRESDN,0.45,6,absolute Spearman
+HTRESDN,0.45,6,absolute Spearman
+HTEEMPDN,0.45,6,absolute Spearman
+WBPPOPDN,0.45,7,absolute Spearman
+WTPPOPDN,0.45,7,absolute Spearman
+WTEEMPDN,0.45,7,absolute Spearman
+DBPPOPDN,0.45,7,absolute Spearman
+DTPPOPDN,0.45,7,absolute Spearman
+DTEEMPDN,0.45,7,absolute Spearman
+R_AGE,0.45,5,absolute Spearman
+HHFAMINC_IMP,0.45,3,absolute Spearman
+EDUC,0.45,4,absolute Spearman
+GCDWORK,0.45,9,absolute Spearman
+TRPMILES,0.45,9,absolute Spearman
+TRVLCMIN,0.45,9,absolute Spearman
+EMPLOYMENT2,0.45,10,absolute Spearman
+WKFMHM22,0.45,8,absolute Spearman
+HHSIZE,0.6,1,absolute Spearman
+NUMADLT,0.6,1,absolute Spearman
+DRVRCNT,0.6,1,absolute Spearman
+WRKCOUNT,0.6,1,absolute Spearman
+HHVEHCNT,0.6,1,absolute Spearman
+HBPPOPDN,0.6,5,absolute Spearman
+HTPPOPDN,0.6,5,absolute Spearman
+HBRESDN,0.6,5,absolute Spearman
+HTRESDN,0.6,5,absolute Spearman
+HTEEMPDN,0.6,5,absolute Spearman
+WBPPOPDN,0.6,5,absolute Spearman
+WTPPOPDN,0.6,5,absolute Spearman
+WTEEMPDN,0.6,5,absolute Spearman
+DBPPOPDN,0.6,5,absolute Spearman
+DTPPOPDN,0.6,5,absolute Spearman
+DTEEMPDN,0.6,5,absolute Spearman
+R_AGE,0.6,4,absolute Spearman
+HHFAMINC_IMP,0.6,2,absolute Spearman
+EDUC,0.6,3,absolute Spearman
+GCDWORK,0.6,7,absolute Spearman
+TRPMILES,0.6,7,absolute Spearman
+TRVLCMIN,0.6,7,absolute Spearman
+EMPLOYMENT2,0.6,8,absolute Spearman
+WKFMHM22,0.6,6,absolute Spearman
+RAIL,0.3,7,bias-corrected Cramer's V
+URBRUR,0.3,8,bias-corrected Cramer's V
+MSACAT,0.3,7,bias-corrected Cramer's V
+HOMEOWN,0.3,3,bias-corrected Cramer's V
+LIF_CYC,0.3,5,bias-corrected Cramer's V
+HOMETYPE,0.3,4,bias-corrected Cramer's V
+DRIVER,0.3,6,bias-corrected Cramer's V
+R_SEX_IMP,0.3,2,bias-corrected Cramer's V
+WRKLOC,0.3,1,bias-corrected Cramer's V
+RAIL,0.45,7,bias-corrected Cramer's V
+URBRUR,0.45,8,bias-corrected Cramer's V
+MSACAT,0.45,7,bias-corrected Cramer's V
+HOMEOWN,0.45,3,bias-corrected Cramer's V
+LIF_CYC,0.45,5,bias-corrected Cramer's V
+HOMETYPE,0.45,4,bias-corrected Cramer's V
+DRIVER,0.45,6,bias-corrected Cramer's V
+R_SEX_IMP,0.45,2,bias-corrected Cramer's V
+WRKLOC,0.45,1,bias-corrected Cramer's V
+RAIL,0.6,7,bias-corrected Cramer's V
+URBRUR,0.6,8,bias-corrected Cramer's V
+MSACAT,0.6,7,bias-corrected Cramer's V
+HOMEOWN,0.6,3,bias-corrected Cramer's V
+LIF_CYC,0.6,5,bias-corrected Cramer's V
+HOMETYPE,0.6,4,bias-corrected Cramer's V
+DRIVER,0.6,6,bias-corrected Cramer's V
+R_SEX_IMP,0.6,2,bias-corrected Cramer's V
+WRKLOC,0.6,1,bias-corrected Cramer's V

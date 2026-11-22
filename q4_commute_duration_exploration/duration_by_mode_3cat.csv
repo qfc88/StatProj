@@ -1,0 +1,4 @@
+group,raw_n,people_n,weighted_share_pct,mean_minutes,median_minutes,p90_minutes,weighted_median_minutes,weighted_p90_minutes
+car,4060,2263,94.89767860851003,26.941871921182265,20.0,50.0,24.0,50.0
+active_travel,129,74,3.0098949551172387,21.286821705426355,15.0,30.0,20.0,45.0
+public_transport,77,52,2.0924264363727367,50.05194805194805,45.0,90.0,40.0,69.23334292731069

@@ -1,0 +1,330 @@
+{
+  "counts": {
+    "commute_trips": 4269,
+    "commuter_people": 2384,
+    "commuter_households": 1928,
+    "adult_workers": 7689,
+    "households": 7893
+  },
+  "mode_counts": {
+    "car": 4062,
+    "active_travel": 130,
+    "public_transport": 77
+  },
+  "mode_people": {
+    "active_travel": 75,
+    "car": 2265,
+    "public_transport": 52
+  },
+  "mode_weighted_pct": {
+    "active_travel": 3.0542039854311516,
+    "car": 94.85515437830537,
+    "public_transport": 2.0906416362634777
+  },
+  "telework_counts": {
+    "1": 4279,
+    "2": 1117,
+    "3": 609,
+    "4": 1684
+  },
+  "zero_vehicle_households": 476,
+  "person_sensitivity_max_abs_rho_change": 0.021435571258718505,
+  "clusters": {
+    "commute": {
+      "absolute Spearman": {
+        "1": [
+          "HHSIZE",
+          "NUMADLT",
+          "DRVRCNT",
+          "HHVEHCNT"
+        ],
+        "2": [
+          "WRKCOUNT"
+        ],
+        "3": [
+          "HHFAMINC_IMP"
+        ],
+        "4": [
+          "EDUC"
+        ],
+        "5": [
+          "R_AGE"
+        ],
+        "6": [
+          "HBPPOPDN",
+          "HTPPOPDN",
+          "HBRESDN",
+          "HTRESDN",
+          "HTEEMPDN"
+        ],
+        "7": [
+          "WBPPOPDN",
+          "WTPPOPDN",
+          "WTEEMPDN",
+          "DBPPOPDN",
+          "DTPPOPDN",
+          "DTEEMPDN"
+        ],
+        "8": [
+          "WKFMHM22"
+        ],
+        "9": [
+          "GCDWORK",
+          "TRPMILES",
+          "TRVLCMIN"
+        ],
+        "10": [
+          "EMPLOYMENT2"
+        ]
+      },
+      "bias-corrected Cramer's V": {
+        "1": [
+          "WRKLOC"
+        ],
+        "2": [
+          "R_SEX_IMP"
+        ],
+        "3": [
+          "HOMEOWN"
+        ],
+        "4": [
+          "HOMETYPE"
+        ],
+        "5": [
+          "LIF_CYC"
+        ],
+        "6": [
+          "DRIVER"
+        ],
+        "7": [
+          "RAIL",
+          "MSACAT"
+        ],
+        "8": [
+          "URBRUR"
+        ]
+      }
+    },
+    "household": {
+      "absolute Spearman": {
+        "1": [
+          "HBPPOPDN",
+          "HTPPOPDN",
+          "HBRESDN",
+          "HTRESDN",
+          "HTEEMPDN"
+        ],
+        "2": [
+          "HHSIZE",
+          "NUMADLT",
+          "DRVRCNT",
+          "HHVEHCNT"
+        ],
+        "3": [
+          "WRKCOUNT"
+        ],
+        "4": [
+          "HHFAMINC_IMP"
+        ]
+      },
+      "bias-corrected Cramer's V": {
+        "1": [
+          "RAIL",
+          "MSACAT"
+        ],
+        "2": [
+          "URBRUR"
+        ],
+        "3": [
+          "HOMETYPE"
+        ],
+        "4": [
+          "HOMEOWN"
+        ],
+        "5": [
+          "LIF_CYC"
+        ]
+      }
+    },
+    "workers": {
+      "absolute Spearman": {
+        "1": [
+          "HHSIZE",
+          "NUMADLT",
+          "DRVRCNT",
+          "WRKCOUNT"
+        ],
+        "2": [
+          "HHVEHCNT"
+        ],
+        "3": [
+          "HHFAMINC_IMP"
+        ],
+        "4": [
+          "EDUC"
+        ],
+        "5": [
+          "WKFMHM22"
+        ],
+        "6": [
+          "R_AGE"
+        ],
+        "7": [
+          "WBPPOPDN",
+          "WTPPOPDN",
+          "WTEEMPDN"
+        ],
+        "8": [
+          "HBPPOPDN",
+          "HTPPOPDN",
+          "HBRESDN",
+          "HTRESDN",
+          "HTEEMPDN"
+        ],
+        "9": [
+          "GCDWORK"
+        ],
+        "10": [
+          "EMPLOYMENT2"
+        ],
+        "11": [
+          "CNTTDTR"
+        ]
+      },
+      "bias-corrected Cramer's V": {
+        "1": [
+          "WRKLOC"
+        ],
+        "2": [
+          "R_SEX_IMP"
+        ],
+        "3": [
+          "HOMEOWN"
+        ],
+        "4": [
+          "LIF_CYC"
+        ],
+        "5": [
+          "DRIVER"
+        ],
+        "6": [
+          "RAIL",
+          "MSACAT"
+        ],
+        "7": [
+          "URBRUR"
+        ]
+      }
+    }
+  },
+  "selected_correlations": {
+    "commute": [
+      {
+        "a": "TRPMILES",
+        "b": "TRVLCMIN",
+        "rho": 0.8264273591983546,
+        "n": 4266
+      },
+      {
+        "a": "GCDWORK",
+        "b": "TRVLCMIN",
+        "rho": 0.7264944999127922,
+        "n": 3811
+      },
+      {
+        "a": "GCDWORK",
+        "b": "TRPMILES",
+        "rho": 0.8843001615346106,
+        "n": 3813
+      },
+      {
+        "a": "HBPPOPDN",
+        "b": "HBRESDN",
+        "rho": 0.865591013467362,
+        "n": 4199
+      },
+      {
+        "a": "HBPPOPDN",
+        "b": "HTPPOPDN",
+        "rho": 0.8347008789418164,
+        "n": 4237
+      },
+      {
+        "a": "HHVEHCNT",
+        "b": "DRVRCNT",
+        "rho": 0.6910732325937418,
+        "n": 4269
+      },
+      {
+        "a": "HHSIZE",
+        "b": "NUMADLT",
+        "rho": 0.7219337442509891,
+        "n": 4269
+      },
+      {
+        "a": "HHFAMINC_IMP",
+        "b": "EDUC",
+        "rho": 0.38415539156836565,
+        "n": 4269
+      },
+      {
+        "a": "HBPPOPDN",
+        "b": "HHVEHCNT",
+        "rho": -0.26834148520263584,
+        "n": 4250
+      }
+    ],
+    "household": [
+      {
+        "a": "HHVEHCNT",
+        "b": "HHFAMINC_IMP",
+        "rho": 0.39121698268462657,
+        "n": 7893
+      },
+      {
+        "a": "HHVEHCNT",
+        "b": "DRVRCNT",
+        "rho": 0.6959739885914715,
+        "n": 7893
+      },
+      {
+        "a": "HHVEHCNT",
+        "b": "HBPPOPDN",
+        "rho": -0.2449143557505281,
+        "n": 7855
+      }
+    ],
+    "workers": [
+      {
+        "a": "WKFMHM22",
+        "b": "EDUC",
+        "rho": 0.26688640433049415,
+        "n": 7689
+      },
+      {
+        "a": "WKFMHM22",
+        "b": "HHFAMINC_IMP",
+        "rho": 0.2173469806442997,
+        "n": 7689
+      },
+      {
+        "a": "WKFMHM22",
+        "b": "CNTTDTR",
+        "rho": -0.0623013808848259,
+        "n": 7689
+      },
+      {
+        "a": "GCDWORK",
+        "b": "HBPPOPDN",
+        "rho": -0.18320198933970538,
+        "n": 5633
+      },
+      {
+        "a": "GCDWORK",
+        "b": "HHFAMINC_IMP",
+        "rho": 0.10600432747849478,
+        "n": 5665
+      }
+    ]
+  }
+}

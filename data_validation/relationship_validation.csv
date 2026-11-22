@@ -1,0 +1,8 @@
+relationship,eligible_child_rows,orphan_rows,status,expected_link
+Person -> Household,16997,0,PASS,HOUSEID
+Vehicle -> Household,14684,0,PASS,HOUSEID
+Trip -> Household,31074,0,PASS,HOUSEID
+Trip -> Person,31074,0,PASS,HOUSEID + PERSONID
+Long Distance -> Person,16997,0,PASS,HOUSEID + PERSONID
+Trip with positive VEHID -> Vehicle,26307,0,PASS,HOUSEID + VEHID
+Person <-> Long Distance roster equality,16997,0,PASS,one Long Distance roster row for every person

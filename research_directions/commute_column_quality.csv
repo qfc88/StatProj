@@ -1,0 +1,45 @@
+column,definition,analysis_type,valid_n,missing_pct,distinct,dominant_pct
+HHSIZE,Total number of people in household,numeric/ordered,4269,0.0,9,39.79854766924338
+NUMADLT,Count of adult household members at least 18 years old,numeric/ordered,4269,0.0,7,61.41953619114546
+DRVRCNT,Number of drivers in the household,numeric/ordered,4269,0.0,8,58.04638088545326
+WRKCOUNT,Count of workers in household,numeric/ordered,4269,0.0,7,50.01171234481143
+HHVEHCNT,Total number of vehicles in household,numeric/ordered,4269,0.0,11,45.58444600609042
+HBPPOPDN,"Category of population density (persons per square mile) in the
+census block group of the household's home location",numeric/ordered,4250,0.44506910283438744,8,22.470588235294116
+HTPPOPDN,"Category of population density (persons per square mile) in the
+census tract of the household's home location",numeric/ordered,4256,0.30452096509721244,8,22.720864661654137
+HBRESDN,"Category of housing units per square mile in the census block group
+of the household's home location",numeric/ordered,4216,1.2415085500117125,8,21.845351043643262
+HTRESDN,"Category of housing units per square mile in the census tract of the
+household's home location",numeric/ordered,4236,0.7730147575544624,8,22.261567516525023
+HTEEMPDN,"Category of workers per square mile in the census tract of the
+household's home location",numeric/ordered,4247,0.515343171702975,8,21.803626089004002
+WBPPOPDN,"Category of population density (persons per square mile) in the
+census block group of the workplace's location",numeric/ordered,3789,11.243851018973999,8,22.195830034309843
+WTPPOPDN,"Category of population density (persons per square mile) in the
+census tract of the workplace's location",numeric/ordered,3780,11.454673225579763,8,22.91005291005291
+WTEEMPDN,"Category of workers per square mile in the census tract of the
+workplace's location",numeric/ordered,3753,12.087139845397049,8,21.742605915267784
+DBPPOPDN,"Category of population density (persons per square mile) in the
+census block group of the trip destination's location",numeric/ordered,4237,0.7495900679315999,8,21.147037998583905
+DTPPOPDN,"Category of population density (persons per square mile) in the
+census tract of the trip destination's location",numeric/ordered,4240,0.6793159990630124,8,22.806603773584904
+DTEEMPDN,"Category of workers per square mile in the census tract of the trip
+destination's location",numeric/ordered,4218,1.1946591707659873,8,22.02465623518255
+R_AGE,Respondent age,numeric/ordered,4269,0.0,67,3.2794565472007493
+HHFAMINC_IMP,Household income (imputed),numeric/ordered,4269,0.0,11,17.70906535488405
+EDUC,Highest level of education,numeric/ordered,4269,0.0,8,29.187163270086668
+GCDWORK,Great circle distance (miles) between home and work,numeric/ordered,3813,10.681658468025299,2053,1.5211119853134014
+TRPMILES,Calculated Trip distance converted into miles,numeric/ordered,4269,0.0,3712,0.1639728273600375
+TRVLCMIN,Trip Duration in Minutes,numeric/ordered,4266,0.07027406886858749,88,17.416783872480075
+EMPLOYMENT2,Hours worked for pay each week,numeric/ordered,4136,3.115483719840712,68,50.507736943907155
+WKFMHM22,Days per week worked from home,numeric/ordered,4136,3.115483719840712,4,77.17601547388782
+RAIL,MSA heavy rail status for household,nominal,4269,0.0,2,79.17545092527524
+URBRUR,Household in urban/rural area,nominal,4269,0.0,2,78.26188802998361
+MSACAT,MSA category for the HH home address,nominal,4269,0.0,4,43.54649800890138
+HOMEOWN,Whether home owned or rented,nominal,4269,0.0,4,57.71843523073319
+LIF_CYC,Life Cycle classification for the household,nominal,4269,0.0,10,33.49730616069337
+HOMETYPE,Type of home,nominal,4269,0.0,5,76.10681658468025
+DRIVER,"Driver status, derived",nominal,4269,0.0,2,97.63410634809088
+R_SEX_IMP,Respondent sex (imputed),nominal,4269,0.0,2,54.95432185523542
+WRKLOC,Description of work location,nominal,4136,3.115483719840712,4,74.05705996131529
