@@ -27,7 +27,7 @@ test data and runs the checks. Then tell your AI assistant your name; it reads `
 | Path | Content |
 |---|---|
 | `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md` | Rules and tutoring guide for AI assistants |
-| `docs/` | Start guide, background and glossary, changes from the proposal, one guide per member |
+| `docs/` | Start guide, background and glossary, Git workflow, integration hand-offs, changes from the proposal, one guide per member |
 | `CONTRACT.md` | File formats shared by the three parts and the expected counts |
 | `src/` | Modelling code; each file has one owner (`docs/team/README.md`) |
 | `tests/` | Checks of the shared contract |
@@ -54,6 +54,7 @@ Run every command from the repository root with the environment activated.
 
 | Step | Owner | Command | Output |
 |---|---|---|---|
+| – | anyone | `python -m src.status --name <you>` | what exists, what is pending, your next step |
 | 0 | anyone | `python -m src.make_fixture` | fake tables in `outputs/fixture/` for testing |
 | 1 | Galvin | `python -m src.prepare_data` | `outputs/modelling/train.csv`, `test.csv` |
 | 2 | Anthony | `python -m src.validation` | `outputs/validation/folds.csv` |
