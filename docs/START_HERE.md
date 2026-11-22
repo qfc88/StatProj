@@ -44,8 +44,12 @@ These tools read `AGENTS.md` automatically. Start with a message like:
 > Tôi là **Galvin** (hoặc Jovie / Anthony). Hãy đọc hướng dẫn của dự án, cho tôi biết dự án
 > đang ở đâu, phần việc của tôi là gì và bước tiếp theo nên làm.
 
-The assistant will answer in Vietnamese, explain one step at a time, and ask you to run
-the commands yourself. Ask as many questions as you like ("Cột này nghĩa là gì?",
+The assistant first reads the project rules and runs `python -m src.status --name <you>`
+to see the real state of the project. It then tells you, in Vietnamese: what the project
+is, what exists now, what is pending, the rules that matter today, and your next step.
+For each step it gives the solution **and** explains it (idea, code, how to run it, how to
+read the output, how to check it), then asks you to run it and answer one question. At the
+end of the session it walks you through saving and sharing your work with Git. Ask as many questions as you like ("Cột này nghĩa là gì?",
 "Tại sao lại chia theo hộ?"). The goal is that **you** understand the work, because every
 member is questioned in the final defence.
 
@@ -67,7 +71,11 @@ because the shared formats are fixed in `CONTRACT.md`.
 
 1. `git checkout main` and `git pull` to get the latest version.
 2. `git checkout -b feature/<your-name>-<task>` for new work (or switch to your branch).
-3. Work in your own files only. Run `python -m pytest` before you share.
-4. `git add <files>`, `git commit -m "short description"`, `git push -u origin <branch>`.
-5. Open a pull request on GitHub and ask your reviewer (see `README.md`, "Team rules").
-6. Add an entry to your section of `AI_USE.md`.
+3. `python -m src.status --name <you>` to see what exists and what is pending.
+4. Work in your own files only. Run `python -m pytest` before you share.
+5. `git add <files>`, `git commit -m "short description"`, `git push -u origin <branch>`.
+6. Open a pull request on GitHub and ask your reviewer (see `docs/team/README.md`).
+7. Add an entry to your section of `AI_USE.md`.
+
+Details and common Git problems: `docs/WORKFLOW_GIT.md`. How the parts are joined and who
+waits for whom: `docs/INTEGRATION.md`.
